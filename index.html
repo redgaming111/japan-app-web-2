@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2e7d32">
+
+  <meta charset="UTF-8">
+  <title>Học tiếng Nhật N5–N3</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<h2 class="titleD">App Học Tiếng Nhật (N5 – N3)</h2>
+<select id="level">
+  <option value="">-- Chọn cấp độ --</option>
+  <option value="N5">N5</option>
+  <option value="N4">N4</option>
+  <option value="N3">N3</option>
+
+</select>
+<select id="category">
+  <option value="">-- Chọn nội dung --</option>
+  <option value="vocab">Từ vựng</option>
+  <option value="grammar">Ngữ pháp</option>
+  <option value="kanji">Chữ Hán</option>
+  <option value="reading">Đọc hiểu</option>
+</select>
+
+<br>
+<input id="search" placeholder="Tìm kiếm..." style="width:300px">
+<br><br>
+
+<button id="starQuizBtn" class="quiz-btn">
+  ⭐ Quiz từ đã đánh dấu
+</button>
+
+
+<button id="startQuiz" class="quiz-btn">🎉 Làm quiz vui nhộn</button>
+<div id="quizBox" class="quiz-card">
+  <div id="streak" class="streak"></div>
+  <h3 id="quizQuestion"></h3>
+  <div id="quizOptions"></div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>⭐</th>
+      <th>Nội dung</th>
+      <th>Cách đọc</th>
+      <th>Ý nghĩa</th>
+    </tr>
+  </thead>
+  <tbody id="content"></tbody>
+</table>
+
+<button id="helpBtn" class="help-btn help-fixed">
+  📘 Cách học hiệu quả
+</button>
+
+<div id="helpModal" class="help-modal">
+  <div class="help-content">
+    <h3>📘 Cách học</h3>
+    <ul>
+      <li>Chọn <b>cấp độ (N5–N3)</b> và <b>nội dung</b> để xem bài học</li>
+      <li>Dùng ô <b>Tìm kiếm</b> để lọc nhanh từ vựng</li>
+      <li>Bấm <b>Làm quiz</b> để tự kiểm tra kiến thức</li>
+      <li>Trả lời đúng liên tiếp để tăng <b>streak</b></li>
+    </ul>
+    <button id="closeHelp" class="close-btn">Đã hiểu 👍</button>
+
+
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/quiz.js"></script>
+
+
+  </div>
+</div>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
